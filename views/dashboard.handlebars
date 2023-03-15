@@ -1,0 +1,20 @@
+<div class="row justify-space-between-md">
+  <div class="dashboard-card">
+    <h2 class="page-title">Dashboard</h2>
+    <form class="form dashboard-form">
+      <div class="form-group">
+        <label for="dash-data">Enter Your Stuff:</label>
+        <input class="form-input" type="text" id="dash-data" />
+      </div>    
+     {{! <div class="form-group">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>}}
+    </form>
+    <div>
+      {{#each dashboard as |dashboard|}}
+      {{> dashboard-details}}
+      {{/each}}
+    </div>
+  </div>
+
+

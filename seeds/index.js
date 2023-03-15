@@ -8,6 +8,8 @@ const seedAll = async () => {
   await seedGallery();
 
   await seedPaintings();
+  
+  await seedDashboard();
 
   process.exit(0);
 };
