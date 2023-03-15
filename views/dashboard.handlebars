@@ -2,13 +2,18 @@
   <div class="dashboard-card">
     <h2 class="page-title">Dashboard</h2>
     <form class="form dashboard-form">
+      <h3>Create New Post</h3>
       <div class="form-group">
-        <label for="dash-data">Enter Your Stuff:</label>
-        <input class="form-input" type="text" id="dash-data" />
-      </div>    
-     {{! <div class="form-group">
-        <button class="btn btn-primary" type="submit">Submit</button>
-      </div>}}
+        <label for="dash-title">Title</label>
+        <input class="form-input" type="text" id="dash-title" />
+      </div>   
+      <div class="form-group">
+        <label for="dash-content">Content</label>
+        <input class="form-input" type="text" id="dash-content" />
+      </div> 
+     <div class="form-group">
+        <button class="btn btn-primary" type="submit">Create</button>
+      </div>
     </form>
     <div>
       {{#each dashboard as |dashboard|}}
@@ -16,5 +21,3 @@
       {{/each}}
     </div>
   </div>
-
-

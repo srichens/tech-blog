@@ -2,20 +2,20 @@ const { Dashboard } = require('../models');
 
 const dashboarddata = [
   {
-    name: 'Dashdata1',
-    description: 'Here is some data',    
+    title: 'Dashdata1',
+    content: 'Here is some data',    
   },
   {
-    name: 'Dashdata2',
-    description: 'Here is some more data',    
+    title: 'Dashdata2',
+    content: 'Here is some more data',    
   },
   {
-    name: 'Dashdata3',
-    description: 'Here is some other data',    
+    title: 'Dashdata3',
+    content: 'Here is some other data',    
   },
   {
-    name: 'Dashdata4',
-    description: 'And some more data',    
+    title: 'Dashdata4',
+    content: 'And some more data',    
   },
 ];
 
