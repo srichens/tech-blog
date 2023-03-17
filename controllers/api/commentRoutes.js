@@ -1,18 +1,18 @@
 const router = require('express').Router();
-const { Dashboard } = require('../models');
+const { Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const dbDashboardData = await Dashboard.findAll({
+    const dbCommentData = await Comment.findAll({
     });
 
-    const dashboard = dbDashboardData.map((dashboard) =>
-      dashboard.get({ plain: true })
+    const comments = dbCommentData.map((comment) =>
+      comment.get({ plain: true })
     );
 
     res.render('dashboard', {
-      dashboard,
+      comments,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
