@@ -1,15 +1,15 @@
-<!-- Loop over each object in the projects array -->
+<!-- 
 {{#each comments as |comment| }}
 <div class="row mb-4 comment">
   <div class="col-md-5">
     <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+ 
       {{{get_emoji}}}
       <a href="/comment/{{comment.id}}">{{comment.title}}</a>
     </h2>
     <p>
       <span for="img" aria-label="money">💲</span>
-      <!-- Pass needed_funding value to the helper function -->
+      
       <span class="dollar-amount">No money</span>
       needed!
     </p>
@@ -21,4 +21,22 @@
     </p>
   </div>
 </div>
-{{/each}}
+{{/each}}-->
+
+
+{{#each comments as |comment| }}
+ <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
+    <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700">               
+      <div class="px-4 py-2">
+          <h2 class="text-xl text-orange-200 font-bold">
+            <a href="/comment/{{comment.id}}">{{comment.title}}</a>
+          </h2>
+      </div>                
+      <div class="px-4 py-2">
+          <h2 class="text-sm text-orange-200">Posted by {{comment.user.name}} on {{format_date comment.date_created}}</h2>
+      </div>               
+    </div>            
+    <p class="p-4">{{comment.content}}</p>
+  </div>
+  {{/each}}
+

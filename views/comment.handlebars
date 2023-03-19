@@ -1,4 +1,4 @@
-<div class="text-center">
+<!--<div class="text-center">
   <h2>{{title}}</h2>
   <p>{{{get_emoji}}}</p>
   <p>{{content}}</p>
@@ -11,4 +11,18 @@
   <p>
     <button class="btn btn-primary">Fund this Project!</button>
   </p>
-</div>
+</div>-->
+
+ <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
+    <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700">               
+      <div class="px-4 py-2">
+          <h2 class="text-xl text-orange-200 font-bold">{{title}}</h2>
+      </div>                
+      <div class="px-4 py-2">
+          <h2 class="text-sm text-orange-200">Posted by {{user.name}} on {{format_date date_created}}</h2>
+      </div>               
+    </div>            
+    <p class="p-4">{{content}}</p>
+  </div>
+
+ 
