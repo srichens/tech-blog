@@ -40,6 +40,31 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const newPostButtonEl = document.getElementById("new-post-btn");
+const createButtonEl =  document.getElementById("create-btn");
+
+const newPostCardEl = document.querySelector('#new-post');
+const dashboardCardEl = document.querySelector('#dashboard');
+
+newPostButtonEl.addEventListener("click", newPostFormHandler);
+createButtonEl.addEventListener("click", createButtonHandler);
+
+
+
+function newPostFormHandler(event){
+  event.preventDefault();
+
+  dashboardCardEl.classList.add("hidden");
+  newPostCardEl.classList.remove("hidden");
+};
+
+function createButtonHandler(event){
+  event.preventDefault();
+
+  newPostCardEl.classList.add("hidden");
+  dashboardCardEl.classList.remove("hidden");
+};
+
 document
   .querySelector('.new-comment-form')
   .addEventListener('submit', newFormHandler);

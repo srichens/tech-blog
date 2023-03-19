@@ -1,10 +1,69 @@
-<div class="row">
+<!--<div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
-</div>
+</div>-->
 
-<div class="row mt-4">
+
+
+  <div class="flex p-4 my-4 md:mx-5">
+      <div class="mx-auto p-2 md:mx-28 border-2 border-orange-200 rounded-lg bg-orange-200 shadow-xl shadow-current">
+          <h1 id="heading" class="text-3xl font-extrabold tracking-wider text-gray-700">Your Dashboard</h1>
+      </div>           
+  </div>
+
+  <div id="dashboard" class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
+    {{#if comments.length}}
+ 
+
+      {{#each comments as |comment|}}
+      <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
+         <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700">               
+          <div class="px-4 py-2">
+              <h2 class="text-xl text-orange-200 font-bold">
+                <a href="/comment/{{comment.id}}">{{comment.title}}</a>
+              </h2>
+          </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger text-white" data-id="{{comment.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+    <div class="form-group flex flex-wrap flex-col mt-40 mb-10 pt-40">
+      <button id="new-post-btn" class="btn text-xl text-white rounded-lg bg-gray-700 hover:bg-gray-500 mx-auto mt-4 px-8 py-2" type="submit">+New Post</button>
+    </div>
+  </div>
+
+  <div id="new-post" class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
+      <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
+          <div class="flex flex-wrap flex-col bg-gray-700">               
+              <div class="px-4 py-2">
+                  <h2 class="text-xl text-orange-200 font-bold">Create New Post</h2>
+              </div>               
+                    
+          </div>            
+            <form class="form new-comment-form">
+              <div class="form-group flex flex-wrap flex-col px-4 py-2">
+                <label for="comment-name">Title</label>
+                <input class="form-input p-3" type="text" id="comment-name" name="comment-name" />
+              </div>
+              <div class="form-group flex flex-wrap flex-col px-4 py-2">
+                <label for="comment-desc">Content</label>
+                <textarea class="form-input p-3" id="comment-desc" name="comment-desc"></textarea>
+              </div>
+              <div class="form-group flex flex-wrap flex-col ">
+                <button id="create-btn" class="btn text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 my-4 p-4" type="submit">Create</button>
+              </div>
+              
+            </form>
+          </div>
+      </div>        
+  </div>
+  
+
+  <!--<div class="row mt-4">
   <div class="col-md-6">
     <h3>Create a New Project:</h3>
 
@@ -21,32 +80,8 @@
         <button type="submit" class="btn btn-primary">Create</button>
       </div>
     </form>
-  </div>
+  </div>-->
 
-   <div class="flex p-4 my-4 md:mx-5">
-          <div class="mx-auto p-2 md:mx-28 border-2 border-orange-200 rounded-lg bg-orange-200 shadow-xl shadow-current">
-              <h1 id="heading" class="text-3xl font-extrabold tracking-wider text-gray-700">Your Dashboard</h1>
-          </div>           
-      </div>
-<div class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
-    
-  {{#if comments.length}}
-  <div class="col-md-6 comment-list">
-    <h3>Current Projects:</h3>
 
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/comment/{{comment.id}}">{{comment.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
-</div>
 
 <script src="./js/dashboard.js"></script>
