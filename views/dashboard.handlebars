@@ -23,6 +23,13 @@
     </form>
   </div>
 
+   <div class="flex p-4 my-4 md:mx-5">
+          <div class="mx-auto p-2 md:mx-28 border-2 border-orange-200 rounded-lg bg-orange-200 shadow-xl shadow-current">
+              <h1 id="heading" class="text-3xl font-extrabold tracking-wider text-gray-700">Your Dashboard</h1>
+          </div>           
+      </div>
+<div class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
+    
   {{#if comments.length}}
   <div class="col-md-6 comment-list">
     <h3>Current Projects:</h3>
@@ -39,6 +46,7 @@
     {{/each}}
   </div>
   {{/if}}
+</div>
 </div>
 
 <script src="./js/dashboard.js"></script>

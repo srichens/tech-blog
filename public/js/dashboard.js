@@ -1,6 +1,8 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
+  
+
   const title = document.querySelector('#comment-name').value.trim();
   // const needed_funding = document.querySelector('#project-funding').value.trim();
   const content = document.querySelector('#comment-desc').value.trim();
@@ -15,7 +17,7 @@ const newFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.replace('/dashboard');  
     } else {
       alert('Failed to create comment');
     }

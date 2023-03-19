@@ -34,69 +34,27 @@
           </div>
       </nav>           
       
-      <div class="flex p-4 my-4 md:mx-5">
+     <!-- <div class="flex p-4 my-4 md:mx-5">
           <div class="mx-auto p-2 md:mx-6 border-2 border-orange-200 rounded-lg bg-orange-200 shadow-xl shadow-current">
-              <h1 class="text-3xl font-extrabold tracking-wider text-gray-700">The Tech Blog</h1>
+              <h1 id="heading" class="text-3xl font-extrabold tracking-wider text-gray-700">The Tech Blog</h1>
           </div>           
-      </div>
+      </div>-->
     </header>
- <!-- <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-     
-      <nav class="navbar">
-        <a href="/">Home</a>
-       
-        {{#if logged_in}}
-        <a href="/dashboard">Dashboard</a> |
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
-      <h1>The Tech Blog</h1>
-    </header>-->
 
-   <main class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
+   <main>
      
-      {{{ body }}}
+    {{{ body }}}
     </main>
     <footer>
       
     </footer>
-  <!--</div>-->
-
 
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  {{/if}}
-  <!--<div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center p-2">
-     
-      <nav class="navbar">
-        <a href="/">Home</a>
-       
-        {{#if logged_in}}
-        <a href="/dashboard">Dashboard</a> |
-        <button class="no-button" id="logout">Logout</button>
-        {{else}}
-        <a href="/login">Login</a>
-        {{/if}}
-      </nav>
-      <h1>The Tech Blog</h1>
-    </header>
-    <main class="container container-fluid mt-5">
-     
-      {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
+  {{/if}}  
 
+  <script src="./js/dashboard.js"></script>
 
-  {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}}-->
 </body>
 
 </html>
