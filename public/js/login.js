@@ -44,6 +44,30 @@ const signupFormHandler = async (event) => {
   }
 };
 
+const signupInsteadButtonEl = document.getElementById("signup-instead");
+const loginInsteadButtonEl = document.getElementById("login-instead");
+const loginCardEl = document.querySelector('#login-card');
+const signupCardEl = document.querySelector('#signup-card');
+
+signupInsteadButtonEl.addEventListener("click", signupInsteadFormHandler);
+loginInsteadButtonEl.addEventListener("click", loginInsteadFormHandler);
+
+
+function signupInsteadFormHandler(event){
+  event.preventDefault();
+
+  loginCardEl.classList.add("hidden");
+  signupCardEl.classList.remove("hidden");
+};
+
+function loginInsteadFormHandler(event){
+  event.preventDefault();
+
+  signupCardEl.classList.add("hidden");
+  loginCardEl.classList.remove("hidden");
+};
+
+
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);

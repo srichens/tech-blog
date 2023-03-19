@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>   
+</head>
+<body class="bg-gray-700">
+    <header class="md:mx-20">  
+        <nav>
+            <div class="flex flex-wrap items-center justify-between my-5 py-5 md:mx-10">
+                <ul class="flex flex-col md:flex-row">
+                    <li class="py-2 px-8 rounded-lg hover:bg-gray-500">
+                        <a href="/" class="text-orange-200">Home</a>
+                    </li>
+                    <li class="py-2 px-8 rounded-lg hover:bg-gray-500">
+                        <a href="/dashboard" class="text-orange-200">Dashboard</a>
+                    </li>
+                    <li class="py-2 px-8 rounded-lg hover:bg-gray-500">
+                        <a href="/login" class="text-orange-200">Login</a>                
+                    </li>
+                    <li class="py-2 px-8 rounded-lg hover:bg-gray-500">
+                        <a href="/logout" class="text-orange-200">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>    
+    </header>
+
+    <div class="flex p-4 my-4 md:mx-5">
+        <div class="mx-auto p-2 md:mx-28 border-r-4 border-b-4 border-double border-gray-500 rounded-lg bg-orange-200 shadow-lg shadow-current"> 
+              <h1 id="heading" class="text-3xl font-extrabold tracking-wider text-gray-700">The Tech Blog</h1>
+        </div>           
+    </div>
+
+    <div class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
+        <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
+            <div class="flex flex-wrap flex-col bg-gray-700">               
+                <div class="px-4 py-2">
+                    <h2 class="text-xl text-orange-200 font-bold">Login</h2>
+                </div>               
+                      
+            </div>            
+            <form class="form login-form">
+                <div class="form-group flex flex-wrap flex-col px-4 py-2">
+                  <label for="email-login">Username</label>
+                  <input class="form-input p-3" type="text" id="email-login" />
+                </div>
+                <div class="form-group flex flex-wrap flex-col px-4 py-2">
+                  <label for="password-login">Password</label>
+                  <input class="form-input p-3" type="password" id="password-login" />
+                </div>
+                <div class="form-group flex flex-wrap flex-col ">
+                  <button class="btn btn-primary text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 mt-4 p-4" type="submit">Login!</button>
+                </div>
+                <div class="form-group flex flex-wrap px-2 py-4 ">
+                    <button class="btn btn-primary signup-instead text-blue-500 rounded-lg p-2 hover:bg-sky-700 hover:text-white" type="submit">Sign up instead</button>
+                  </div>
+              </form>
+            </div>
+        </div>        
+    </div>
+
+    <div class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current hidden">
+        <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
+            <div class="flex flex-wrap flex-col bg-gray-700">               
+                <div class="px-4 py-2">
+                    <h2 class="text-xl text-orange-200 font-bold">Sign up</h2>
+                </div>               
+                      
+            </div>            
+            <form class="form login-form">
+                <div class="form-group flex flex-wrap flex-col px-4 py-2">
+                  <label for="email-login">Username</label>
+                  <input class="form-input p-3" type="text" id="email-login" />
+                </div>
+                <div class="form-group flex flex-wrap flex-col px-4 py-2">
+                  <label for="password-login">Password</label>
+                  <input class="form-input p-3" type="password" id="password-login" />
+                </div>
+                <div class="form-group flex flex-wrap flex-col ">
+                  <button class="btn btn-primary text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 mt-4 p-4" type="submit">Sign up!</button>
+                </div>
+                <div class="form-group flex flex-wrap px-2 py-4 ">
+                    <button class="btn btn-primary login-instead text-blue-500 rounded-lg p-2 hover:bg-sky-700 hover:text-white" type="submit">Login instead</button>
+                  </div>
+              </form>
+            </div>
+        </div>        
+    </div>
+    
+</body>
+</html>
