@@ -13,10 +13,10 @@ router.get('/:id', async (req, res) => {
       ],
     });
 
-    const update = updateData.get({ plain: true });
+    const updates = updateData.get({ plain: true });
 
     res.render('update', {
-      ...update,
+      ...updates,
       logged_in: req.session.logged_in
     });
   } catch (err) {
