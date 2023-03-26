@@ -13,12 +13,17 @@
       </div>               
     </div>            
     <p class="p-4">{{content}}</p>
-    <div id="dashboard" class="bg-orange-200 mx-2 py-2 md:mx-20 md:mb-10 md:px-10 shadow-xl rounded-lg shadow-current">
+    <p class="text-black mx-auto">{{id}}</p>
+
+    <div>
     {{#if comments.length}}
     <div class="comment-list flex flex-wrap flex-col m-5 border-2 border-orange-200">
       {{#each comments as |comment|}} 
         <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-500 my-4 py-4 shadow-xl rounded-lg shadow-current">               
-          <p class="p-4">{{comment.comment_text}}</p>
+              <!--<p class="text-white mx-auto">{{comment.blogpost_id}}</p>-->
+          <p class="p-4">{{user.username}}: {{comment.comment_text}}</p>
+      
+          
           
         </div>
       {{/each}}
@@ -26,17 +31,20 @@
     {{/if}}
   </div>
   <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
-    <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700 p-5">              
-               
-               
-    </div>            
-    <div class="form-group flex flex-wrap flex-col px-4 py-2">
+    <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700 p-5"></div> 
+
+    <form class="new-comment-form">       
+      <!--<div class="flex flex-wrap flex-col px-4 py-2"> -->
           <label for="comment-desc">Comment</label>
-          <textarea class="form-input p-3" id="comment-desc" name="comment-desc"></textarea>
-        </div>
-        <div class="form-group flex flex-wrap flex-col ">
-          <button id="comment-btn" class="btn text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 my-4 p-4" type="submit">Submit</button>
-        </div>
+          <textarea class="p-3" id="comment-desc" name="comment-desc"></textarea>
+     <!-- </div> 
+      <div class="flex flex-wrap flex-col "-->
+        <p id="blogpost-id">{{id}}</p>
+        <button id="comment-btn" class="btn text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 my-4 p-4" type="submit">Submit</button>
+      <!--</div> -->
+    </form>
+    
   </div>
    
- 
+ <script src="/js/comment.js"></script>
+

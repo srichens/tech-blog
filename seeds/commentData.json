@@ -1,0 +1,35 @@
+[
+  {
+    
+    "comment_text": "Test.",
+    "user_id": 1,
+    "blogpost_id": 1
+   
+  },
+  {
+    
+    "comment_text": "Testy test.",
+    "user_id": 2,
+    "blogpost_id": 1
+   
+  },
+  {
+    
+    "comment_text": "A mobile app test.",
+    "user_id": 3,
+    "blogpost_id": 1
+   
+  },
+  {
+    
+    "comment_text": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
+    "user_id": 2,
+    "blogpost_id": 2  
+  },
+  {
+    
+    "comment_text": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
+    "user_id": 3,
+    "blogpost_id": 3
+  }
+]

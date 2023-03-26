@@ -1,39 +1,43 @@
-const newPostButtonEl = document.getElementById("new-post-btn");
-const newPostCardEl = document.querySelector('#new-post');
-const dashboardCardEl = document.querySelector('#dashboard');
+// const newCommentButtonEl = document.getElementById("new-comment-btn");
+// const newCommentCardEl = document.querySelector('#new-comment');
+// const dashboardCardEl = document.querySelector('#dashboard');
 
-function newPostFormHandler(event){
+// function newCommentHandler(event){
+//   event.preventDefault();
+
+//   dashboardCardEl.classList.add("hidden");
+//   newCommentCardEl.classList.remove("hidden");
+// };
+
+// newCommentButtonEl.addEventListener("click", newCommentHandler);
+
+const newCommentHandler = async (event) => {
+// const newCommentHandler = (event) => {
   event.preventDefault();
+console.log('this even listener is working');
+ 
+  const comment_text = document.querySelector('#comment-desc').value.trim();
+  console.log(comment_text);
+  const blogpost_id = document.querySelector('#blogpost-id').textContent;
+  console.log(blogpost_id);
 
-  dashboardCardEl.classList.add("hidden");
-  newPostCardEl.classList.remove("hidden");
-};
-
-newPostButtonEl.addEventListener("click", newPostFormHandler);
-
-const newFormHandler = async (event) => {
-  event.preventDefault();
-
-  const title = document.querySelector('#comment-name').value.trim();  
-  const content = document.querySelector('#comment-desc').value.trim();
-
-  if (title && content) {
-    const response = await fetch(`/api/blogposts`, {
+  try  {
+    const response = await fetch(`/api/blogposts/${blogpost_id}`, {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ comment_text, blogpost_id }),
       headers: {
         'Content-Type': 'application/json',
       },
     });
 
-    if (response.ok) {
-      newPostCardEl.classList.add("hidden");
-      dashboardCardEl.classList.remove("hidden");
-      document.location.replace('/dashboard');     
+    if (response.ok) {  
+      document.location.replace(`/blogpost/${blogpost_id}`);     
     } else {
-      alert('Failed to create blog post');
+      alert('Failed to comment on blog post');
     }
-  }
+  } catch (err) {
+    console.error(err);
+  }  
 };
 
 // const delButtonHandler = async (event) => {
@@ -54,7 +58,7 @@ const newFormHandler = async (event) => {
 
 document
   .querySelector('.new-comment-form')
-  .addEventListener('submit', newFormHandler);
+  .addEventListener('submit', newCommentHandler);
 
 // document
 //   .querySelector('.comment-list')
