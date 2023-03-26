@@ -14,8 +14,8 @@ newPostButtonEl.addEventListener("click", newPostFormHandler);
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#comment-name').value.trim();  
-  const content = document.querySelector('#comment-desc').value.trim();
+  const title = document.querySelector('#post-name').value.trim();  
+  const content = document.querySelector('#post-desc').value.trim();
 
   if (title && content) {
     const response = await fetch(`/api/blogposts`, {
@@ -53,9 +53,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-comment-form')
+  .querySelector('.new-post-form')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.comment-list')
+  .querySelector('.post-list')
   .addEventListener('click', delButtonHandler);
