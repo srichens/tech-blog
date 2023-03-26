@@ -30,19 +30,19 @@
 
 <div class="bg-orange-200 mb-8 mx-2 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
 
-{{#each comments as |comment| }}
+{{#each blogposts as |blogpost| }}
  <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
     <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700">               
       <div class="px-4 py-2">
           <h2 class="text-xl text-orange-200 font-bold">
-            <a href="/comment/{{comment.id}}">{{comment.title}}</a>
+            <a href="/blogpost/{{blogpost.id}}">{{blogpost.title}}</a>
           </h2>
       </div>                
       <div class="px-4 py-2">
-          <h2 class="text-sm text-orange-200">Posted by {{comment.user.username}} on {{format_date comment.date_created}}</h2>
+          <h2 class="text-sm text-orange-200">Posted by {{blogpost.user.username}} on {{format_date blogpost.date_created}}</h2>
       </div>               
     </div>            
-    <p class="p-4">{{comment.content}}</p>
+    <p class="p-4">{{blogpost.content}}</p>
   </div>
   {{/each}}
  </div> 
