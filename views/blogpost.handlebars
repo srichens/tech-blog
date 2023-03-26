@@ -30,6 +30,8 @@
     </div>
     {{/if}}
   </div>
+
+   {{#if logged_in}}
   <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
     <div class="flex flex-wrap flex-col md:flex-row md:justify-between bg-gray-700 p-5"></div> 
 
@@ -44,7 +46,12 @@
       <!--</div> -->
     </form>
     
-  </div>
+  </div> 
+  {{/if}}
+  
+  
+  {{#if logged_in}}
    
  <script src="/js/comment.js"></script>
 
+ {{/if}}
