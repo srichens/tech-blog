@@ -42,7 +42,7 @@ router.get('/blogpost/:id', async (req, res) => {
         }
       ],
     });
-console.log(blogpostData);
+
     const blogpost = blogpostData.get({ plain: true });
 
     res.render('blogpost', {

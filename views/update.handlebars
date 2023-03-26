@@ -1,29 +1,30 @@
   
  
-  <div id="edit-post" class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
+  <div id="update-post" class="bg-orange-200 py-2 md:mx-20 md:px-10 shadow-xl rounded-lg shadow-current">
     <div class="flex flex-wrap flex-col m-5 border-2 border-gray-700 shadow-lg shadow-current rounded">
       <div class="flex flex-wrap flex-col bg-gray-700">               
           <div class="px-4 py-2">
               <h2 class="text-xl text-orange-200 font-bold">Edit Post</h2>
           </div>                       
       </div>            
-      <form class="form edit-comment-form">
+      <form class="form update-form">
         <div class="form-group flex flex-wrap flex-col px-4 py-2">
-          <label for="comment-name">Title</label>
-          <textarea class="form-input p-3" type="text" id="comment-name" name="comment-name">{{title}}</textarea>
+          <label for="update-name">Title</label>
+          <textarea class="form-input p-3" type="text" id="update-name" name="update-name">{{title}}</textarea>
         </div>
         <div class="form-group flex flex-wrap flex-col px-4 py-2">
-          <label for="comment-desc">Content</label>
-          <textarea class="form-input p-3" id="comment-desc" name="comment-desc">{{content}}</textarea>
+          <label for="update-desc">Content</label>
+          <textarea class="form-input p-3" id="update-desc" name="update-desc">{{content}}</textarea>
         </div>
         <div class="form-group flex flex-wrap flex-col ">
-          <button id="update-btn" class="btn text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 my-4 p-4" type="submit" data-id="{{id}}">Update Post</button>         
+          <button id="update-btn" class="btn text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 my-4 p-4" type="submit">Update Post</button>         
         </div>
+        <p id="update-id">{{id}}</p>
       </form>      
-      <div class="delete-comment flex flex-wrap flex-col ">       
+      <!--<div class="delete-comment flex flex-wrap flex-col ">       
           <button class="btn text-white rounded-lg bg-gray-500 hover:bg-gray-700 mx-4 my-4 p-4" data-id="{{id}}">Delete</button>
-      </div>
+      </div> -->
     </div>         
   </div> 
 
-  <script src="./js/update.js"></script>
+  <script src="/js/update.js"></script>

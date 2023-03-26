@@ -37,7 +37,7 @@ console.log('this even listener is working');
     }
   } catch (err) {
     console.error(err);
-  }  
+  }; 
 };
 
 // const delButtonHandler = async (event) => {

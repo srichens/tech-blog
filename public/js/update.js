@@ -13,15 +13,18 @@
 
 const editFormHandler = async (event) => {
   event.preventDefault();
+  console.log("this even handler is working");
 
-  const title = document.querySelector('#comment-name').value.trim();  
-  const content = document.querySelector('#comment-desc').value.trim();
+  const title = document.querySelector('#update-name').value.trim();  
+  const content = document.querySelector('#update-desc').value.trim();
+  const update_id = document.querySelector('#update-id').textContent;
+  console.log(title);
+  console.log(content);
+  console.log(update_id);
 
-  if (title && content) {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/blogposts/${id}`, {
+try { 
+      
+      const response = await fetch(`/api/blogposts/${update_id}`, {
         method: 'PUT',
         body: JSON.stringify({ title, content }),
         headers: {
@@ -34,30 +37,32 @@ const editFormHandler = async (event) => {
       } else {
         alert('Failed to update blog post');
       }
-    }
-  }  
+    } catch (err) {
+      console.error(err);
+    }; 
+   
 };
 
-const deleteHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+// const deleteHandler = async (event) => {
+//   if (event.target.hasAttribute('data-id')) {
+//     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/blogposts/${id}`, {
-      method: 'DELETE',
-    });
+//     const response = await fetch(`/api/blogposts/${id}`, {
+//       method: 'DELETE',
+//     });
 
-    if (response.ok) {
-      document.location.replace('/dashboard');
-    } else {
-      alert('Failed to delete post');
-    }
-  }
-};
+//     if (response.ok) {
+//       document.location.replace('/dashboard');
+//     } else {
+//       alert('Failed to delete post');
+//     }
+//   }
+// };
 
 document
-  .querySelector('.edit-comment-form')
+  .querySelector('.update-form')
   .addEventListener('submit', editFormHandler);
 
-document
-  .querySelector('.delete-comment')
-  .addEventListener('click', deleteHandler);
+// document
+//   .querySelector('.delete-comment')
+//   .addEventListener('click', deleteHandler);

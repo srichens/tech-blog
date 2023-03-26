@@ -60,7 +60,14 @@ router.put('/:id', withAuth, async (req, res) => {
     const updatedBlogpost = await Blogpost.update({
       ...req.body,
       user_id: req.session.user_id,
-    });
+    },
+    {
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    }
+    );
 
     res.status(200).json(updatedBlogpost);
   } catch (err) {
