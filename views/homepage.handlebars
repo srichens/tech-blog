@@ -1,27 +1,4 @@
-<!-- 
-{{#each comments as |comment| }}
-<div class="row mb-4 comment">
-  <div class="col-md-5">
-    <h2>
- 
-      {{{get_emoji}}}
-      <a href="/comment/{{comment.id}}">{{comment.title}}</a>
-    </h2>
-    <p>
-      <span for="img" aria-label="money">💲</span>
-      
-      <span class="dollar-amount">No money</span>
-      needed!
-    </p>
-    <p>Created by {{comment.user.name}} on {{format_date comment.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{comment.content}}
-    </p>
-  </div>
-</div>
-{{/each}}-->
+
 <div class="flex p-4 my-4 md:mx-5">
     <div class="mx-auto p-2 md:mx-28 border-r-4 border-b-4 border-double border-gray-500 rounded-lg bg-orange-200 shadow-lg shadow-current"> 
           <h1 id="heading" class="text-3xl font-extrabold tracking-wider text-gray-700">The Tech Blog</h1>
