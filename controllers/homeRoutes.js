@@ -3,8 +3,7 @@ const { Blogpost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
-  try {
-    // Get all projects and JOIN with user data
+  try {    
     const blogpostData = await Blogpost.findAll({
       include: [
         {
@@ -13,11 +12,9 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
-    // Serialize data so the template can read it
+   
     const blogposts = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
+    
     res.render('homepage', { 
       blogposts, 
       logged_in: req.session.logged_in 
@@ -36,8 +33,7 @@ router.get('/blogpost/:id', async (req, res) => {
           attributes: ['username'],
         },
         {
-          model: Comment, 
-          // attributes: ['comment_text', 'blogpost_id', 'user_id'],
+          model: Comment,           
           include: [{model: User}]
         }
       ],
@@ -77,11 +73,8 @@ router.get('/update/:id', async (req, res) => {
 });
 
 
-
-// Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
-  try {
-    // Find the logged in user based on the session ID
+  try {    
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Blogpost }],
@@ -98,8 +91,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+router.get('/login', (req, res) => {  
   if (req.session.logged_in) {
     res.redirect('/dashboard');
     return;
@@ -109,8 +101,7 @@ router.get('/login', (req, res) => {
 });
 
 
-router.get('/signup', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+router.get('/signup', (req, res) => {  
   
   res.render('signup');
 });
