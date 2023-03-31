@@ -1,16 +1,3 @@
-// const newPostButtonEl = document.getElementById("new-post-btn");
-// const newPostCardEl = document.querySelector('#new-post');
-// const dashboardCardEl = document.querySelector('#dashboard');
-
-// function newPostFormHandler(event){
-//   event.preventDefault();
-
-//   dashboardCardEl.classList.add("hidden");
-//   newPostCardEl.classList.remove("hidden");
-// };
-
-// newPostButtonEl.addEventListener("click", newPostFormHandler);
-
 const editFormHandler = async (event) => {
   event.preventDefault();
   console.log("this even handler is working");
@@ -43,26 +30,9 @@ try {
    
 };
 
-// const deleteHandler = async (event) => {
-//   if (event.target.hasAttribute('data-id')) {
-//     const id = event.target.getAttribute('data-id');
-
-//     const response = await fetch(`/api/blogposts/${id}`, {
-//       method: 'DELETE',
-//     });
-
-//     if (response.ok) {
-//       document.location.replace('/dashboard');
-//     } else {
-//       alert('Failed to delete post');
-//     }
-//   }
-// };
 
 document
   .querySelector('.update-form')
   .addEventListener('submit', editFormHandler);
 
-// document
-//   .querySelector('.delete-comment')
-//   .addEventListener('click', deleteHandler);
+
