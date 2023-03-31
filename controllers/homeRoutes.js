@@ -37,7 +37,7 @@ router.get('/blogpost/:id', async (req, res) => {
         },
         {
           model: Comment, 
-          attributes: ['comment_text', 'blogpost_id', 'user_id'],
+          // attributes: ['comment_text', 'blogpost_id', 'user_id'],
           include: [{model: User}]
         }
       ],
@@ -47,7 +47,7 @@ router.get('/blogpost/:id', async (req, res) => {
 
     res.render('blogpost', {
       ...blogpost,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,     
     });
   } catch (err) {
     res.status(500).json(err);
